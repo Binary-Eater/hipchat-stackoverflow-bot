@@ -1,0 +1,38 @@
+{
+  "key": "rahuls-answers",
+  "name": "Rahul's Answers",
+  "description": "StackOverflow-Powered Answers",
+  "vendor": {
+    "name": "Answer Tech",
+    "url": "https://www.hipchat.com"
+  },
+  "links": {
+    "self": "{{localBaseUrl}}/atlassian-connect.json",
+    "homepage": "{{localBaseUrl}}"
+  },
+  "capabilities": {
+    "hipchatApiConsumer": {
+      "scopes": [
+        "send_notification",
+        "view_room"
+      ],
+      "avatar": {
+        "url": "{{localBaseUrl}}/img/logo.png",
+        "url@2x": "{{localBaseUrl}}/img/logo.png"
+      }
+    },
+    "installable": {
+      "callbackUrl": "{{localBaseUrl}}/installable"
+    },
+    "configurable": {
+      "url": "{{localBaseUrl}}/config"
+    },
+    "webhook": {
+      "url": "{{localBaseUrl}}/answers",
+      "pattern": "^/question",
+      "event": "room_message",
+      "name": "Rahul's Answer",
+      "authentication": "jwt"
+    }
+  }
+}
